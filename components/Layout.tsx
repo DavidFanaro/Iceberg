@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Background from './Background';
+import NavButtonGroup from './Nav/NavButtonGroup';
 
 type Props = {
   children: ReactNode;
@@ -8,6 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => (
   <>
     <Background />
+    <NavButtonGroup />
     <div>{children}</div>
   </>
 );
