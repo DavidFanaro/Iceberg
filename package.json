@@ -11,6 +11,7 @@
     "db:view": "npx prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "3.14.0",
     "formik": "^2.2.9",
     "next": "12.1.6",
     "prisma": "^3.14.0",

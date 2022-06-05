@@ -2,6 +2,27 @@ import { useFormik } from 'formik'
 import React from 'react'
 import { GrFormAdd } from 'react-icons/gr'
 
+const addService = async (name: String, url: String, image: String) => {
+  const req = await fetch('api/services', {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name,
+      url,
+      image
+    })
+  })
+
+  if (req.ok) {
+    console.log('sucesss!!')
+  } else {
+    console.log(req.statusText)
+  }
+}
+
 const AddMenu = () => {
   const addServiceForm = useFormik({
     initialValues: {
@@ -10,7 +31,7 @@ const AddMenu = () => {
       image: '',
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      addService(values.name, values.url, values.image)
     },
   });
 
