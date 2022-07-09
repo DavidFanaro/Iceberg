@@ -3,7 +3,7 @@ import React from 'react'
 import { GrFormAdd } from 'react-icons/gr'
 
 const addService = async (name: String, url: String, image: String) => {
-  const req = await fetch('api/services', {
+  await fetch('api/services', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
@@ -16,11 +16,11 @@ const addService = async (name: String, url: String, image: String) => {
     })
   })
 
-  if (req.ok) {
-    console.log('sucesss!!')
-  } else {
-    console.log(req.statusText)
-  }
+  // if (req.ok) {
+  //   console.log('sucesss!!')
+  // } else {
+  //   console.log(req.statusText)
+  // }
 }
 
 const AddMenu = () => {

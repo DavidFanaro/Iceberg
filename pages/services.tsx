@@ -22,7 +22,7 @@ const services = () => {
             ADD
           </button>
           <button type='button' onClick={() => setcurrentPage(Page.EDIT)}>
-            edit
+            EDIT
           </button>
         </div>
         {currentPage === Page.ADD ? <AddMenu /> : <EditMenu />}
