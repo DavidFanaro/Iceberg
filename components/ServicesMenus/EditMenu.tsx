@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import ServiceCard from './EditMenuComponents/ServiceCard'
 
 type service = {
-  id: Number,
-  image: String,
-  name: String,
-  url: String
+  id: number,
+  image: string,
+  name: string,
+  url: string
 }
 
 const EditMenu = () => {
 
   // eslint-disable-next-line no-unused-vars
-  const [services, setservices] = useState<[service | undefined]>()
+  const [services, setservices] = useState<[service]>()
 
   useEffect(() => {
     fetch('/api/services').then((i) => i.json()).then((j) => {
@@ -26,8 +26,21 @@ const EditMenu = () => {
 
 
   return (
-    <div>
-      <ServiceCard />
+    <div className='overflow-y-auto pt-4'>
+      {
+        services ? services.map((s) =>
+          <div className='py-1'>
+            <ServiceCard key={s.id} id={s.id} name={s.name} image={s.image} />
+          </div>
+        )
+          :
+          <div>
+            Loading
+          </div>
+
+
+
+      }
     </div>
   )
 }
