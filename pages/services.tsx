@@ -17,11 +17,11 @@ const services = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
       <div className='w-5/6 h-5/6 bg-slate-100 rounded-3xl p-3 overflow-auto'>
-        <div className='flex justify-around mt-4'>
-          <button type='button' onClick={() => setcurrentPage(Page.ADD)}>
+        <div className='flex justify-around mt-4 pb-3'>
+          <button type='button' className='btn btn-wide' onClick={() => setcurrentPage(Page.ADD)}>
             ADD
           </button>
-          <button type='button' onClick={() => setcurrentPage(Page.EDIT)}>
+          <button type='button' className='btn btn-wide' onClick={() => setcurrentPage(Page.EDIT)}>
             EDIT
           </button>
         </div>

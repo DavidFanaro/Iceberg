@@ -19,14 +19,8 @@ const EditMenu = () => {
     })
   }, [])
 
-  // useEffect(() => {
-
-  //   console.log(services)
-  // }, [services])
-
-
   return (
-    <div className='overflow-y-auto pt-4'>
+    <div className='pt-4'>
       {
         services ? services.map((s) =>
           <div className='py-1'>
@@ -37,9 +31,6 @@ const EditMenu = () => {
           <div>
             Loading
           </div>
-
-
-
       }
     </div>
   )

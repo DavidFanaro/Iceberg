@@ -1,6 +1,5 @@
 import { useFormik } from 'formik'
 import React from 'react'
-import { GrFormAdd } from 'react-icons/gr'
 
 const addService = async (name: String, url: String, image: String) => {
   await fetch('api/services', {
@@ -48,7 +47,7 @@ const AddMenu = () => {
           <label htmlFor='image'> Image
             <input className='ml-3' type="text" name='image' onChange={addServiceForm.handleChange} value={addServiceForm.values.image} />
           </label>
-          <button type="submit"> <GrFormAdd />ADD</button>
+          <button className='btn' type="submit"> Add </button>
         </form>
       </div>
     </div>
